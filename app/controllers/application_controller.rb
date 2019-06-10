@@ -41,8 +41,7 @@ class ApplicationController < Sinatra::Base
 
   post "/login" do
     user = User.find_by(:username => params[:username])
-    if user 
-      binding.pry
+    if user
       redirect "/account"
     else
       redirect "/failure"
